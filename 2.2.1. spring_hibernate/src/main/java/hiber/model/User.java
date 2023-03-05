@@ -3,9 +3,20 @@ package hiber.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "users")
+@Table(name = "user")
 public class User {
 
+   @OneToOne(cascade = CascadeType.ALL)
+   @JoinColumn(name = "user_id")
+   //@MapsId
+   private Car usercar;
+   public Car getCar() {
+      return usercar;
+   }
+
+   public void setCar(Car car) {
+      this.usercar = car;
+   }
    @Id
    @GeneratedValue(strategy = GenerationType.IDENTITY)
    private Long id;
@@ -21,12 +32,19 @@ public class User {
 
    public User() {}
    
+
+   public User(String firstName, String lastName, String email,Car car) {
+      this.firstName = firstName;
+      this.lastName = lastName;
+      this.email = email;
+      this.usercar = car;
+   }
    public User(String firstName, String lastName, String email) {
       this.firstName = firstName;
       this.lastName = lastName;
       this.email = email;
-   }
 
+   }
    public Long getId() {
       return id;
    }
