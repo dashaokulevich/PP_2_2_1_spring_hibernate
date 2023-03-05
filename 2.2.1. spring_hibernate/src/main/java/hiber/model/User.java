@@ -8,7 +8,6 @@ public class User {
 
    @OneToOne(cascade = CascadeType.ALL)
    @JoinColumn(name = "user_id")
-   //@MapsId
    private Car usercar;
    public Car getCar() {
       return usercar;

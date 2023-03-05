@@ -20,7 +20,7 @@ public class MainApp {
        userService.add(new User("Наталья", "Сачко", "nata@gmail.com", new Car("Pegeot", 5878935)));
        userService.add(new User("Юлия", "Лучникова", "julia@gmail.com", new Car("Bently", 11478)));
        userService.add(new User("Ольга", "Сакель", "olsa@gmail.com", new Car("Infinity", 45789)));
-       userService.add(new User("ghj","ffff","fff"));
+
 
        List<User> users = userService.listUsers();
        for (User user : users) {

@@ -5,9 +5,6 @@ import javax.persistence.*;
 @Entity
 @Table(name = "car")
 public class Car {
-
-    //@OneToOne(mappedBy = "usercar")
-    //private  User user;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
