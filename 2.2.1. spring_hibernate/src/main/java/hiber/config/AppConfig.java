@@ -23,7 +23,7 @@ import java.util.Properties;
 @ComponentScan(value = "hiber")//указывает на то, что все компоненты (классы, помеченные аннотацией @Component, @Service, @Repository и т.д.) должны сканироваться в пакете hiber.
 public class AppConfig {
 
-   @Autowired
+   
    private Environment env;//Это означает, что Spring автоматически внедрит экземпляр Environment в эту переменную.
    // Environment - это объект, который содержит свойства приложения, определенные в файлах свойств и системных свойства
 
