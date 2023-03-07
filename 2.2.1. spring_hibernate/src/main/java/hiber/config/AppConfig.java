@@ -24,17 +24,12 @@ import java.util.Properties;
 public class AppConfig {
 
    
-   private Environment env;//Это означает, что Spring автоматически внедрит экземпляр Environment в эту переменную.
-   // Environment - это объект, который содержит свойства приложения, определенные в файлах свойств и системных свойства
+   private Environment env;
 
-  //создает объект DriverManagerDataSource, который представляет собой конфигурацию базы данных.
-  // В этом методе мы устанавливаем свойства для создания соединения с базой данных, используя свойства,
-  // загруженные из файла свойств.
-
-
-   //Метод getDataSource() создает объект DriverManagerDataSource, который представляет собой конфигурацию
-   // базы данных. В этом методе мы устанавливаем свойства для создания соединения с базой данных,
-   // используя свойства, загруженные из файла свойств.
+   public AppConfig(Environment env){
+      this.env = env;
+   }
+   
    @Bean
    public DataSource getDataSource() {
       DriverManagerDataSource dataSource = new DriverManagerDataSource();//- создание нового объекта DriverManagerDataSource, который будет использоваться для установления соединения с базой данных.
